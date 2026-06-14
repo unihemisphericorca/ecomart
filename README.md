@@ -26,11 +26,13 @@ Header with logo and navigation
 Hero section: banner image, heading, description, "Shop Now" button
 Three feature cards in a 3-column grid
 Footer with 3 columns (About, Help, Legal) and copyright
+
 Page 2 — Catalog (`catalog.html`)
 Same header and hero as Home
 Product grid with 5 product cards (auto-fit responsive grid)
 Each card has an image, name, description, and "Add to Cart" button
 Same footer
+
 Page 3 — Contact (`contact.html`)
 Same header and hero
 Contact form in a 2-column grid layout:
