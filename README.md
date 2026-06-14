@@ -2,6 +2,7 @@ EcoMart – Project README
 Project Overview
 EcoMart is a three-page static website for an eco-friendly online store.
 Built using only basic HTML and CSS — no JavaScript frameworks, no libraries.
+
 ---
 Project Structure
 ```
@@ -19,6 +20,7 @@ Open the `ecomart/` folder
 Double-click `index.html` to open it in your browser
 Use the navigation links (Home | Catalog | Contact) to move between pages
 No installation, no server, no terminal needed.
+
 ---
 Pages
 Page 1 — Home (`index.html`)
@@ -41,6 +43,7 @@ Subject (full width)
 Message textarea (full width)
 Send Message and Clear buttons
 Same footer
+
 ---
 Stylesheet (`css/styles.css`)
 All three pages share one stylesheet. Sections in the file:
@@ -57,6 +60,7 @@ Header	Dark bg (#1f2937), white text, flexbox layout
 Footer	Dark bg (#111827), 3-column grid, copyright bar
 @media 768px	Tablet: 2-column cards, 1-column footer and form
 @media 480px	Mobile: 1-column everything, stacked header
+
 ---
 Color & Style Guide
 Element	Value
@@ -69,6 +73,7 @@ Footer background	#111827
 Footer text	#9ca3af
 Container max-width	1100px
 Button style	Rounded corners, white text, bold, hover darken
+
 ---
 Responsive Breakpoints
 Screen Width	Layout
@@ -84,10 +89,12 @@ Media queries — `@media (max-width: 768px)` and `@media (max-width: 480px)` ha
 Shared stylesheet — one `styles.css` file linked by all three pages so any style change applies site-wide.
 Semantic HTML — `<header>`, `<main>`, `<section>`, `<footer>`, `<nav>` used instead of generic `<div>` tags where appropriate.
 type="reset" button — the Clear button on the contact form resets all fields using a built-in browser feature, no JavaScript required.
+
 ---
 External Resources
 Placeholder images provided by dummyimage.com.
 No other external libraries or dependencies used.
+
 ---
 Author Notes
 All pages use the same header and footer (copy-pasted across files — in a real project you would use a templating system or JavaScript to avoid repetition)
