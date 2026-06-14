@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!-- 
+  <!DOCTYPE html> tells the browser this is a modern HTML5 document.
+  Always put this on the very first line of every HTML file.
+-->
+
+<html lang="en">
+<!--
+  <html> is the ROOT element — everything lives inside it.
+  lang="en" tells search engines and screen readers the page is in English.
+-->
+
+<head>
+  <!--
+    <head> contains INVISIBLE information about the page:
+    the title shown in the browser tab, links to CSS, character encoding, etc.
+    Nothing inside <head> appears on the visible page.
+  -->
+
+  <!-- utf-8 lets the browser correctly display letters, symbols, emojis -->
+  <meta charset="UTF-8">
+
+  <!-- Makes the page zoom to fit the device screen width (important for mobile) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- The text shown in the browser tab -->
+  <title>EcoMart – Home</title>
+
+  <!--
+    Link to our shared stylesheet.
+    rel="stylesheet" = this is a CSS file
+    href = the path to the file (relative to this HTML file)
+    Every page links to the SAME file so styles stay consistent.
+  -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!--
+    <body> contains everything the visitor SEES on the page.
+    We have three main sections: <header>, <main>, and <footer>.
+  -->
+
+  <!-- ======================================================
+       HEADER — appears on every page
+       Contains the logo (left) and navigation links (right).
+       The CSS uses flexbox to push them to opposite sides.
+  ====================================================== -->
+  <header>
+    <div class="container">
+      <!-- Logo / site name: clicking it goes back to Home -->
+      <a href="index.html" class="logo">EcoMart</a>
+
+      <!-- Navigation: the three page links -->
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ======================================================
+       MAIN — the unique content for THIS page
+  ====================================================== -->
+  <main>
+
+    <!-- --------------------------------------------------
+         HERO SECTION
+         A big banner image + heading + description + button.
+         Lives inside .container so it stays centred and max 1100px.
+    -------------------------------------------------- -->
+    <section class="hero">
+      <div class="container">
+
+        <!-- Banner image — dummyimage.com gives us a placeholder at exact size -->
+        <img
+          src="https://dummyimage.com/1100x300?text=EcoMart+Hero+Banner"
+          alt="EcoMart Hero Banner"
+        >
+        <!-- alt="" = alternative text. Screen readers read this aloud for blind users.
+             Also shown if the image fails to load. Always describe the image. -->
+
+        <!-- Main page heading (there should only be ONE <h1> per page) -->
+        <h1>Fresh Deals Every Day</h1>
+
+        <!-- Short description paragraph -->
+        <p>Shop eco-friendly products at great prices. Better for you and the planet.</p>
+
+        <!--
+          "Shop Now" button — it's actually a link (<a>) styled to look like a button.
+          class="btn" applies our button styles from styles.css.
+          href="catalog.html" navigates to the Catalog page when clicked.
+        -->
+        <a href="catalog.html" class="btn">Shop Now</a>
+
+      </div>
+    </section>
+    <!-- end .hero -->
+
+
+    <!-- --------------------------------------------------
+         FEATURE CARDS SECTION
+         Three cards displayed side by side using CSS Grid.
+         Each card has an image, a title, and a description.
+    -------------------------------------------------- -->
+    <section class="features">
+      <div class="container">
+
+        <!-- Optional section heading -->
+        <h2>Why Shop With Us?</h2>
+
+        <!--
+          .cards-grid activates the 3-column CSS Grid from styles.css.
+          Each direct child becomes a "grid item" — one card.
+        -->
+        <div class="cards-grid">
+
+          <!-- CARD 1 -->
+          <div class="card">
+            <!-- Image spans the full card width (100% set in CSS) -->
+            <img
+              src="https://dummyimage.com/340x180?text=Fresh+Produce"
+              alt="Fresh Produce"
+            >
+            <!-- .card-body = the text area below the image with padding -->
+            <div class="card-body">
+              <h3>Farm-Fresh Produce</h3>
+              <p>Locally sourced fruits and vegetables.</p>
+            </div>
+          </div>
+          <!-- end CARD 1 -->
+
+          <!-- CARD 2 -->
+          <div class="card">
+            <img
+              src="https://dummyimage.com/340x180?text=Eco+Household"
+              alt="Eco Household products"
+            >
+            <div class="card-body">
+              <h3>Eco Household</h3>
+              <p>Everyday essentials that reduce waste.</p>
+            </div>
+          </div>
+          <!-- end CARD 2 -->
+
+          <!-- CARD 3 -->
+          <div class="card">
+            <img
+              src="https://dummyimage.com/340x180?text=Healthy+Snacks"
+              alt="Healthy Snacks"
+            >
+            <div class="card-body">
+              <h3>Healthy Snacks</h3>
+              <p>Nutritious and tasty eco-friendly snacks.</p>
+            </div>
+          </div>
+          <!-- end CARD 3 -->
+
+        </div>
+        <!-- end .cards-grid -->
+
+      </div>
+    </section>
+    <!-- end .features -->
+
+  </main>
+  <!-- end <main> -->
+
+
+  <!-- ======================================================
+       FOOTER — appears on every page
+       Three columns: About | Help | Legal
+       Plus a copyright bar at the bottom.
+  ====================================================== -->
+  <footer>
+    <div class="container">
+
+      <!--
+        .footer-grid creates the 3-column layout.
+        Each <div> inside is one column.
+      -->
+      <div class="footer-grid">
+
+        <!-- Column 1: About -->
+        <div>
+          <h4>About</h4>
+          <a href="#">Our Story</a>
+          <a href="#">Sustainability</a>
+          <a href="#">Careers</a>
+        </div>
+
+        <!-- Column 2: Help -->
+        <div>
+          <h4>Help</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Shipping</a>
+          <a href="#">Returns</a>
+        </div>
+
+        <!-- Column 3: Legal -->
+        <div>
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+
+      </div>
+      <!-- end .footer-grid -->
+
+      <!-- Copyright bar — sits below the three columns -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 EcoMart. All rights reserved.</p>
+        <!-- &copy; is an HTML entity that prints the © copyright symbol -->
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,467 @@
+/* ============================================================
+   styles.css — Shared stylesheet for ALL three EcoMart pages
+   Every page links to this one file so the look stays the same.
+   ============================================================ */
+
+
+/* ----------------------------------------------------------
+   1. RESET
+   By default, browsers add their own spacing and sizing rules.
+   This "reset" removes those defaults so WE control everything.
+   `box-sizing: border-box` means padding and border are
+   INCLUDED in an element's width, which is much easier to work with.
+   ---------------------------------------------------------- */
+* {
+  box-sizing: border-box; /* padding & border won't make elements wider than we set */
+  margin: 0;              /* remove default outer spacing */
+  padding: 0;             /* remove default inner spacing */
+}
+
+
+/* ----------------------------------------------------------
+   2. BODY (the whole page background and font)
+   ---------------------------------------------------------- */
+body {
+  font-family: Arial, sans-serif; /* the font for ALL text on every page */
+  background-color: #f3f4f6;      /* a very light grey background */
+  color: #1f2937;                 /* dark grey text — easier to read than pure black */
+  line-height: 1.6;               /* a bit of space between lines of text */
+}
+
+
+/* ----------------------------------------------------------
+   3. CONTAINER
+   A "container" is a box that keeps content centred and not
+   too wide on large screens. We reuse this class everywhere.
+   ---------------------------------------------------------- */
+.container {
+  max-width: 1100px; /* never wider than 1100 pixels */
+  margin: 0 auto;    /* left margin = right margin = auto → centres the box */
+  padding: 0 20px;   /* a little breathing room on the left and right sides */
+}
+
+
+/* ----------------------------------------------------------
+   4. LINKS (the <a> tag)
+   ---------------------------------------------------------- */
+a {
+  color: #0d6efd;       /* blue colour for links */
+  text-decoration: none; /* remove the default underline */
+}
+
+a:hover {
+  text-decoration: underline; /* add underline only when the mouse hovers */
+}
+
+
+/* ----------------------------------------------------------
+   5. HEADER
+   The dark bar at the top of every page.
+   We use flexbox to put the logo on the left and the nav on the right.
+   Flexbox is a layout tool — it lines things up in a row (or column).
+   ---------------------------------------------------------- */
+header {
+  background-color: #1f2937; /* very dark blue-grey */
+  color: white;
+  padding: 16px 0; /* space above and below the content inside the header */
+}
+
+/* The container inside the header holds logo + nav side by side */
+header .container {
+  display: flex;             /* turn on flexbox — children line up in a ROW */
+  justify-content: space-between; /* push logo to the left, nav to the right */
+  align-items: center;       /* vertically centre both items */
+}
+
+/* The site name / logo */
+header .logo {
+  font-size: 1.5rem;  /* larger text */
+  font-weight: bold;
+  color: white;
+  text-decoration: none; /* it's a link but we don't want it to look like one */
+}
+
+/* The navigation links: Home | Catalog | Contact */
+header nav a {
+  color: white;
+  margin-left: 24px;       /* space between each link */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+
+/* ----------------------------------------------------------
+   6. HERO SECTION
+   The big banner area near the top of a page with an image,
+   a heading, some text, and a button.
+   ---------------------------------------------------------- */
+.hero {
+  padding: 40px 0; /* space above and below */
+}
+
+/* The banner image spans the full container width */
+.hero img {
+  width: 100%;       /* stretch to fill the container */
+  display: block;    /* removes the tiny gap that inline images get */
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #4b5563; /* medium grey */
+}
+
+
+/* ----------------------------------------------------------
+   7. BUTTON (.btn)
+   A reusable button style. Any <a> or <button> with class="btn"
+   will look like this blue pill-shaped button.
+   ---------------------------------------------------------- */
+.btn {
+  display: inline-block;       /* lets us set padding on a link */
+  background-color: #0d6efd;   /* the primary blue colour */
+  color: white;
+  font-weight: bold;
+  padding: 12px 28px;          /* space inside the button */
+  border-radius: 6px;          /* rounded corners */
+  text-decoration: none;
+  border: none;                /* remove any default button border */
+  cursor: pointer;             /* hand cursor on hover */
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background-color: #0b5ed7;   /* slightly darker blue on hover */
+  text-decoration: none;       /* keep it clean, no underline */
+}
+
+/* A "secondary" button variant (used for Clear on contact page) */
+.btn-secondary {
+  background-color: #6c757d; /* grey */
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+
+/* ----------------------------------------------------------
+   8. FEATURE CARDS (Home page — 3-column grid)
+   CSS Grid lets us create columns automatically.
+   ---------------------------------------------------------- */
+.features {
+  padding: 40px 0;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.6rem;
+}
+
+/* The grid wrapper: creates 3 equal columns with a 24px gap */
+.cards-grid {
+  display: grid;
+  /* repeat(3, 1fr) = 3 columns, each taking 1 equal fraction of space */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px; /* space between each card */
+}
+
+/* Each individual card */
+.card {
+  background-color: white;
+  border-radius: 8px;               /* rounded corners on the card */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* subtle shadow so it "floats" */
+  overflow: hidden;                 /* clips the image to stay inside the rounded corners */
+}
+
+/* The image inside a card fills the full card width */
+.card img {
+  width: 100%;
+  display: block;
+}
+
+/* The text content below the image in a card */
+.card-body {
+  padding: 16px;
+}
+
+.card-body h3 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.card-body p {
+  color: #4b5563;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+
+/* ----------------------------------------------------------
+   9. CATALOG SECTION (Catalog page — flexible auto-fit grid)
+   `auto-fit` + `minmax` automatically decides how many columns
+   to show. On a wide screen: 3. Narrow screen: fewer.
+   ---------------------------------------------------------- */
+.catalog-section {
+  padding: 40px 0;
+}
+
+.catalog-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.catalog-section > .container > p {
+  color: #4b5563;
+  margin-bottom: 24px;
+}
+
+/* Auto-fit grid: each column is at least 250px wide */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Product card — same base style as .card but with an Add to Cart button */
+.product-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;          /* stack children in a column */
+  flex-direction: column;
+}
+
+.product-card img {
+  width: 100%;
+  display: block;
+}
+
+.product-card-body {
+  padding: 16px;
+  flex: 1;                /* take up remaining space so button sits at the bottom */
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card-body h3 {
+  margin-bottom: 8px;
+}
+
+.product-card-body p {
+  color: #4b5563;
+  font-size: 0.95rem;
+  flex: 1; /* push button to bottom */
+  margin-bottom: 16px;
+}
+
+
+/* ----------------------------------------------------------
+   10. CONTACT SECTION (Contact page)
+   ---------------------------------------------------------- */
+.contact-section {
+  padding: 40px 0;
+}
+
+.contact-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.contact-section > .container > p {
+  color: #4b5563;
+  margin-bottom: 24px;
+}
+
+/* The form card: white box with padding */
+.contact-form-wrapper {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 32px;
+}
+
+/* The form uses CSS Grid for a 2-column layout */
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 16px;
+}
+
+/* Some fields should span BOTH columns (full width) */
+.full-width {
+  grid-column: 1 / -1; /* start at column 1, end at the last column */
+}
+
+/* Label text above each field */
+.contact-form label {
+  display: block;       /* puts label on its own line above the input */
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+/* The wrapper div holds a label + its input together */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for <input> and <textarea> fields */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db; /* light grey border */
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+  background-color: #f9fafb;
+}
+
+/* Highlight the field when the user clicks into it */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;                        /* remove the default blue outline */
+  border-color: #0d6efd;               /* our blue border instead */
+  box-shadow: 0 0 0 3px rgba(13,110,253,0.15); /* soft glow */
+}
+
+.contact-form textarea {
+  resize: vertical; /* user can resize the textarea up/down, not left/right */
+  min-height: 130px;
+}
+
+/* Row holding the two form buttons */
+.form-buttons {
+  display: flex;
+  gap: 12px;           /* space between the two buttons */
+  grid-column: 1 / -1; /* make this row span both columns */
+}
+
+/* The "Send Message" button fills all remaining width */
+.btn-full {
+  flex: 1; /* grow to fill available space */
+}
+
+
+/* ----------------------------------------------------------
+   11. FOOTER
+   Dark bar at the bottom: 3 columns of links + copyright line.
+   ---------------------------------------------------------- */
+footer {
+  background-color: #111827; /* very dark — darker than the header */
+  color: #9ca3af;             /* medium grey text */
+  padding: 40px 0 20px;
+  margin-top: 60px;
+}
+
+/* 3 equal columns for About | Help | Legal */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.footer-grid h4 {
+  color: white;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+/* Links inside the footer */
+.footer-grid a {
+  display: block;       /* each link on its own line */
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  text-decoration: none;
+}
+
+.footer-grid a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+/* The copyright bar below the 3 columns */
+.footer-bottom {
+  border-top: 1px solid #374151; /* a faint line to separate */
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+
+/* ----------------------------------------------------------
+   12. RESPONSIVE — TABLET (screens 768px and below)
+   Media queries are like IF statements for screen width.
+   When the screen is narrower than 769px, these rules take over.
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+
+  /* 3 columns → 2 columns on tablet */
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer 3 columns → 1 column */
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact form: 2 columns → 1 column */
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+
+  /* On 1-column layout, "full-width" spans are already full — reset */
+  .full-width,
+  .form-buttons {
+    grid-column: 1;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   13. RESPONSIVE — MOBILE (screens 480px and below)
+   ---------------------------------------------------------- */
+@media (max-width: 480px) {
+
+  /* On phones, everything goes to 1 column */
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Header: stack logo above nav links */
+  header .container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  header nav a {
+    margin-left: 12px;
+  }
+
+  /* Slightly smaller hero heading on phone */
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Stack the form buttons on mobile */
+  .form-buttons {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!-- Page 3 of 3: The Contact Page -->
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoMart – Contact</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ======================================================
+       HEADER — same as the other two pages
+  ====================================================== -->
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">EcoMart</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- --------------------------------------------------
+         HERO SECTION — same banner as the other pages
+    -------------------------------------------------- -->
+    <section class="hero">
+      <div class="container">
+        <img
+          src="https://dummyimage.com/1100x300?text=EcoMart+Hero+Banner"
+          alt="EcoMart Hero Banner"
+        >
+        <h1>Fresh Deals Every Day</h1>
+        <p>Shop eco-friendly products at great prices. Better for you and the planet.</p>
+        <a href="catalog.html" class="btn">Shop Now</a>
+      </div>
+    </section>
+
+
+    <!-- --------------------------------------------------
+         CONTACT SECTION
+         Contains the heading, intro text, and the form.
+    -------------------------------------------------- -->
+    <section class="contact-section">
+      <div class="container">
+
+        <h2>Contact EcoMart</h2>
+        <p>We'd love to hear from you. Fill in the form and we'll get back to you shortly.</p>
+
+        <!-- White card that wraps the form -->
+        <div class="contact-form-wrapper">
+
+          <!--
+            THE CONTACT FORM
+            A <form> collects user input. Each field is an <input> or <textarea>.
+            action="#" means "do nothing when submitted" (no server to send to yet).
+            method="post" is how data would be sent if we had a server.
+
+            Our CSS grid gives this form a 2-column layout on wider screens.
+          -->
+          <form class="contact-form" action="#" method="post">
+
+            <!--
+              NAME FIELD (Column 1)
+              .form-group wraps the <label> and <input> together as a unit.
+              <label for="name"> is paired with <input id="name">.
+              Clicking the label focuses the input — important for accessibility.
+            -->
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your full name"
+                required
+                <!-- required = the browser won't submit the form if this is empty -->
+              >
+            </div>
+
+            <!--
+              EMAIL FIELD (Column 2)
+              type="email" makes the browser validate that the user typed
+              something that looks like an email address (e.g., a@b.com).
+            -->
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              >
+            </div>
+
+            <!--
+              SUBJECT FIELD — spans BOTH columns (.full-width)
+              CSS rule: grid-column: 1 / -1  makes this stretch across all columns.
+            -->
+            <div class="form-group full-width">
+              <label for="subject">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="What is this about?"
+                required
+              >
+            </div>
+
+            <!--
+              MESSAGE TEXTAREA — also spans both columns
+              <textarea> is used when you need MULTIPLE lines of text.
+              Unlike <input>, it has an opening and closing tag.
+              rows="6" sets a default visible height.
+            -->
+            <div class="form-group full-width">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Write your message here…"
+                required
+              ></textarea>
+              <!-- Note: <textarea> cannot be self-closing. Must have </textarea> -->
+            </div>
+
+            <!--
+              BUTTON ROW — spans both columns
+              Contains two buttons: Send (primary blue) and Clear (grey).
+              .btn-full makes the Send button stretch to fill remaining space.
+            -->
+            <div class="form-buttons full-width">
+
+              <!--
+                type="submit" — clicking this sends the form data.
+                It's a <button> (not <a>) because it performs an action,
+                not navigation.
+              -->
+              <button type="submit" class="btn btn-full">Send Message</button>
+
+              <!--
+                type="reset" — clicking this clears ALL form fields back to empty.
+                This is built into the browser — no JavaScript needed!
+              -->
+              <button type="reset" class="btn btn-secondary">Clear</button>
+
+            </div>
+            <!-- end .form-buttons -->
+
+          </form>
+          <!-- end .contact-form -->
+
+        </div>
+        <!-- end .contact-form-wrapper -->
+
+      </div>
+    </section>
+    <!-- end .contact-section -->
+
+  </main>
+
+
+  <!-- ======================================================
+       FOOTER — identical on all three pages
+  ====================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>About</h4>
+          <a href="#">Our Story</a>
+          <a href="#">Sustainability</a>
+          <a href="#">Careers</a>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Shipping</a>
+          <a href="#">Returns</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 EcoMart. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

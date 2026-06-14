@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- Page 2 of 3: The Product Catalog -->
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Different tab title for this page -->
+  <title>EcoMart – Catalog</title>
+
+  <!-- Same shared stylesheet as the Home page -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ======================================================
+       HEADER — identical on all three pages
+       Changing the link text highlights the active page is
+       a nice-to-have but not required here.
+  ====================================================== -->
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">EcoMart</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- --------------------------------------------------
+         HERO SECTION
+         Same hero banner as the Home page (per the wireframe).
+         You could change the heading text if you wanted a
+         Catalog-specific greeting.
+    -------------------------------------------------- -->
+    <section class="hero">
+      <div class="container">
+        <img
+          src="https://dummyimage.com/1100x300?text=EcoMart+Hero+Banner"
+          alt="EcoMart Hero Banner"
+        >
+        <h1>Fresh Deals Every Day</h1>
+        <p>Shop eco-friendly products at great prices. Better for you and the planet.</p>
+        <a href="catalog.html" class="btn">Shop Now</a>
+      </div>
+    </section>
+
+
+    <!-- --------------------------------------------------
+         CATALOG SECTION
+         Displays 5 product cards in a responsive auto-fit grid.
+         The grid auto-fits: on wide screens → 3 columns,
+         on tablet → 2, on phone → 1. CSS handles this automatically
+         using: grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+    -------------------------------------------------- -->
+    <section class="catalog-section">
+      <div class="container">
+
+        <h2>Our Catalog</h2>
+        <p>Discover eco-friendly products for a greener lifestyle.</p>
+
+        <!--
+          .product-grid: the auto-fit grid container.
+          Each .product-card inside is one grid item (one product).
+        -->
+        <div class="product-grid">
+
+          <!-- PRODUCT 1 -->
+          <div class="product-card">
+            <img
+              src="https://dummyimage.com/400x300?text=Organic+Apples"
+              alt="Organic Apples"
+            >
+            <div class="product-card-body">
+              <h3>Organic Apples</h3>
+              <p>Crisp, sweet, pesticide-free apples (1 kg).</p>
+              <!--
+                "Add to Cart" is a <button> here (not a link) because
+                it performs an ACTION, not navigation.
+                The btn class gives it the same blue style.
+              -->
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+          <!-- end PRODUCT 1 -->
+
+          <!-- PRODUCT 2 -->
+          <div class="product-card">
+            <img
+              src="https://dummyimage.com/400x300?text=Bamboo+Toothbrush"
+              alt="Bamboo Toothbrush"
+            >
+            <div class="product-card-body">
+              <h3>Bamboo Toothbrush</h3>
+              <p>Eco-friendly and biodegradable handle.</p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+          <!-- end PRODUCT 2 -->
+
+          <!-- PRODUCT 3 -->
+          <div class="product-card">
+            <img
+              src="https://dummyimage.com/400x300?text=Almond+Mix"
+              alt="Almond Mix"
+            >
+            <div class="product-card-body">
+              <h3>Almond Mix</h3>
+              <p>Roasted almonds, high protein snack.</p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+          <!-- end PRODUCT 3 -->
+
+          <!-- PRODUCT 4 -->
+          <div class="product-card">
+            <img
+              src="https://dummyimage.com/400x300?text=Reusable+Bottle"
+              alt="Reusable Bottle"
+            >
+            <div class="product-card-body">
+              <h3>Reusable Bottle</h3>
+              <p>Insulated 750 ml stainless steel bottle.</p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+          <!-- end PRODUCT 4 -->
+
+          <!-- PRODUCT 5 -->
+          <div class="product-card">
+            <img
+              src="https://dummyimage.com/400x300?text=Compost+Bags"
+              alt="Compost Bags"
+            >
+            <div class="product-card-body">
+              <h3>Compost Bags</h3>
+              <p>Compostable waste bags, 30 pieces.</p>
+              <button class="btn">Add to Cart</button>
+            </div>
+          </div>
+          <!-- end PRODUCT 5 -->
+
+        </div>
+        <!-- end .product-grid -->
+
+      </div>
+    </section>
+    <!-- end .catalog-section -->
+
+  </main>
+
+
+  <!-- ======================================================
+       FOOTER — identical on all three pages
+  ====================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>About</h4>
+          <a href="#">Our Story</a>
+          <a href="#">Sustainability</a>
+          <a href="#">Careers</a>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Shipping</a>
+          <a href="#">Returns</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 EcoMart. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
